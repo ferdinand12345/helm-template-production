@@ -1,0 +1,13 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: sapura-app-route
+  namespace: project-testing
+spec:
+  host: sapura-app-route.apps.cluster-bp2lg.bp2lg.sandbox1562.opentlc.com
+  to:
+    kind: Service
+    name: sapura-app-service
+  port:
+    targetPort: 3000
+  wildcardPolicy: None
